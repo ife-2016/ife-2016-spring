@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>misson-13</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="input_w" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="display_w">尚无录入</span></div>
+
+<script type="text/javascript">
+
+(function() {
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的value值，运用innerHTML示在aqi-display中
+  isNa  n()是判断是否为非数字，如果num为非数字的值，返回true
+  */
+   var button = document.getElementById("button");
+   var input=document.getElementById("input_w");//单引号和双引号的区别
+   var display=document.getElementById("display_w");
+   button.onclick=function(){
+         if((!isNaN(input.value))&&(input.value>0)&&(input.value<10000)){//if(input.value)??
+           display.innerHTML=input.value;
+         }
+         else{
+          alert(input.value+"不正确，请输入0-10000内的整数");
+        }
+             
+          
+   } 
+
+})();
+
+</script>
+</body>
+</html>
